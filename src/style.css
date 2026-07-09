@@ -1,0 +1,211 @@
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #fff; /*背景の色*/
+  --border: #e5e4e7; /*枠線*/
+  --code-bg: #ffffff;
+  --accent: #0008f8; /*ボタンの色*/
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+  --social-bg: rgba(244, 243, 236, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #16171d;
+    --border: #2e303a;
+    --code-bg: #1f2028;
+    --accent: #9484fc;
+    --accent-bg: rgba(192, 132, 252, 0.15);
+    --accent-border: rgba(192, 132, 252, 0.5);
+    --social-bg: rgba(47, 48, 58, 0.5);
+    --swiper-theme-color: #007aff; /*クリック時枠が青くなる*/
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+
+  #social .button-icon {
+    filter: invert(1) brightness(2);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: var(--bg);
+  color: var(--text);
+}
+
+#app {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 32px;
+}
+
+#basic_form {
+  width: 100%;
+  max-width: 500px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  padding: 32px;
+
+  background: rgb(225, 225, 225); /*下の入力の背景の色*/
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 8px;
+  color: var(--text-h);
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 12px 16px;
+
+  font: inherit;
+  color: var(--text-h);
+
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+input::placeholder {
+  color: var(--text);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-bg);
+}
+
+button {
+  padding: 14px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: var(--accent);
+  color: #ffffff;
+
+  font: inherit;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: opacity 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.just-validate-error-label {
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+.just-validate-error-field {
+  border-color: #000000; /*下の入力の枠線の色*/
+}
+
+.swiper {
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  margin: 40px auto;
+  position: relative;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+.swiper-scrollbar {
+  display: none;
+}
+
+.swiper-pagination {
+  position: absolute;
+  bottom: 10px !important;
+}
+.swiper-center {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.swiper-slide img {
+  max-width: 150px;
+  width: 80%;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide p {
+  margin-top: 10px;
+  font-size: 18px;
+  color: black;
+  text-align: center;
+}
