@@ -2,8 +2,21 @@ import './style.css';
 import JustValidate from 'just-validate';
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
+import { animate } from 'animejs';
 
 const validate = new JustValidate('#basic_form');
+const images = document.querySelectorAll('.anime-img');
+
+images.forEach((img) => {
+  img.addEventListener('click', (event) => {
+    event.stopPropagation();
+    animate(img, {
+      scale: [1, 1.3, 1],
+      rotate: ['0deg', '360deg', '0deg'],
+      duration: 1000,
+    });
+  });
+});
 
 validate
   .addField('#basic_name', [
@@ -48,8 +61,6 @@ validate
     event.preventDefault();
 
     const formData = new FormData(event.target);
-
-    // ※ここはHTMLのname属性と一致させる必要あり
     console.log('氏名:', formData.get('basic_name'));
     console.log('メールアドレス:', formData.get('basic_email'));
     console.log('パスワード:', formData.get('basic_password'));
@@ -68,19 +79,5 @@ new Swiper('.swiper1', {
   navigation: {
     nextEl: '.swiper1 .swiper-button-next',
     prevEl: '.swiper1 .swiper-button-prev',
-  },
-});
-
-new Swiper('.swiper2', {
-  loop: true,
-
-  pagination: {
-    el: '.swiper2 .swiper-pagination',
-    clickable: true,
-  },
-
-  navigation: {
-    nextEl: '.swiper2 .swiper-button-next',
-    prevEl: '.swiper2 .swiper-button-prev',
   },
 });
