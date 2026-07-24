@@ -3,10 +3,10 @@ npm install
 京都精華大学でデザインと Web 開発を学んでいます。
 
 【Github の URL】
-https://...
+https://github.com/rei325/homepage
 
 【GitHub Pages のURL】
-https://...
+https://rei325.github.io/homepage/
 
 【成果物の説明文】
 animejsを使っておみくじWebアプリを制作しました
